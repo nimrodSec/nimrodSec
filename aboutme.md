@@ -4,13 +4,24 @@ title: About me
 subtitle: Why you'd want to go on a date with me
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+## whoami 
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+My name is ``Nimrod Adam``, I'm an IT-Security enthusiast mostly interested in  
+- *Linux*
+- *Low-Level Security*
+- *Applied Cryptography*  
 
-What else do you need?
+& pretty much anything related to making computers more private and secure.
 
-### My story
+Next to experimenting with technology in my free time I am also currently finishing a BA in Cyber Security at
+*Brandenburg University of Applied Sciences*.
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+---
+
+#### Hobbies
+When I don't need to troubleshoot my linux system I like to play chess, go climbing, read and spend time with our cats. 
+
+---
+
+If you want to get in touch feel free to [contact](/nimrodSec/contact) me!
+
