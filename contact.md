@@ -1,10 +1,10 @@
 ### Contact
 
-Feel free to contact me if you have any questions regarding my blog, for sharing interestingg or want  
+Feel free to contact me!  
 I usually respond within a couple of days.
 
 {: .box-warning}
-Preferably use an encrypted form of communication.
+Preferably, use an encrypted form of communication.
 
 My E-mail is:  
 **nimsec (at) systemli.org**
@@ -12,8 +12,9 @@ My E-mail is:
 To write an E2E encrypted mail, download my public PGP key [here](/nimrodSec/assets/pub_nimsec.asc).  
 
 After importing the key, make sure the fingerprint matches the following:  
+
 {: .box-success}  
 PGP-Fingerprint: 8572 FE58 9565 8958 F048 8E76 D090 A119 39F7 9626
 
 If you prefer to use *matrix*, contact me at: 
-**(at)nimsec:matrix.systemli.org **
+**(at)nimsec:matrix.systemli.org**
