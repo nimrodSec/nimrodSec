@@ -1,4 +1,10 @@
-**Feel free to contact me!**
+---
+layout: page
+title: contact
+subtitle: 
+--
+
+**Feel free to get in touch!**
 
 I usually respond within a couple of days.
 
