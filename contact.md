@@ -1,8 +1,5 @@
----
-layout: page
-title: contact
-subtitle: 
---
+# Contact
+
 
 **Feel free to get in touch!**
 
