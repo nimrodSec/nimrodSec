@@ -10,22 +10,20 @@
 ############################
 
 # Name of website
-title: My website
+title: Nimrod Adam
 
 # Your name to show in the footer
-author: Some Person
+author: Nimrod Adam
 
 ###############################################
 # --- List of links in the navigation bar --- #
 ###############################################
 
 navbar-links:
-  About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
-
+  Home: "/nimrodSec"
+  About: "aboutme"
+  Contact: "contact"
+  
 ################
 # --- Logo --- #
 ################
