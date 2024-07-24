@@ -14,7 +14,7 @@ Preferably, use an encrypted form of communication!
 My E-mail is:  
 **nimsec (at) systemli.org**
 
-To write an E2E encrypted mail, download my public PGP key [here](/nimrodSec/assets/pub_nimsec.asc).  
+To write an E2E encrypted mail, download my public PGP key [here](/nimrodSec/assets/nimsec-pub.asc).  
 
 After importing the key, make sure the fingerprint matches the following:  
 {: .box-success}  
