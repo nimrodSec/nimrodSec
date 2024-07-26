@@ -1,0 +1,71 @@
+---
+layout: post
+title: The Search For Boot Security Requirements
+subtitle: AKA Solving trust-issues with your computer 
+gh-repo: daattali/beautiful-jekyll
+gh-badge: [star, fork, follow]
+tags: [test]
+comments: false
+mathjax: true
+author: Nimrod Adam
+---
+
+{: .box-note}
+As this blog post is based on a university paper I wrote, it is written in a somewhat academic manner. I hope it is not to cumbersome to read. 
+The post is about understanding the underlying technologies and necessity of boot security. 
+And it is intended to be the first part of a mini-series! The next post will evaluate the most well-known boot security measure: UEFI Secure Boot.   
+
+# The Search For Boot Security Requirements 
+## AKA Solving trust-issues with your computer 
+
+### 1. Motivation
+In the last years, attacks against the boot process have
+become more and more sophisticated. 
+In comparison to malware targeting the operating system, boot-level malware is
+highly persistent, often sustaining both reboots and re-installs
+of a system [1]. 
+While advances have been made in improving platform
+firmware and bootloader security, most notably in the form
+of Secure Boot, ways of circumventing those protections have
+been found[2]. 
+
+{: .box-error}
+It is crucial to find effective olutions for establishing a secure and verifiable boot process,
+as even security focused operating systems, such as Tails or QubesOS, can not protect
+from compromised boot firmware [3].
+
+### 2. Some Fundamentals
+
+#### A. BIOS and UEFI
+The system Basic Input Output System (**BIOS**) is the first
+piece of software executed on the CPU when a computer
+is powered on. 
+
+While historically its role was to provide
+operating systems access to hardware, its current primary
+role is to *initialize and test hardware components* and *load
+the operating system*. In addition, modern BIOS loads and
+initializes important system management functions.
+
+{: .box-note}
+There are several different types of BIOS firmware on x86
+systems. Most newer systems use boot firmware based on
+the UEFI specifications [4]. 
+
+The BIOS has traditionally been considered the **root of trust**
+for the operating system. As it's the first code that runs on
+the CPU the BIOS can (maliciously) modify the OS image that
+it is supposed to load. 
+Due to the privileged access it has to
+all the hardware, it can (maliciously) reprogram all periphery
+devices. 
+Finally, it provides the code that executes in System
+Management Mode, thus being able to inject malicious SMM
+rootkits at runtime [5].
+
+#### B. Trusted Platform Module
+The trusted platform module (**TPM**) is a discrete microchip
+found on most modern computer systems. It is tasked with
+providing *basic security-related functions*, including securely
+storing and generating encryption keys and providing assur-
+ances about the state of a system [6]. 
