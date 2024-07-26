@@ -1,4 +1,5 @@
-**Feel free to write me!**. Whether it's questions or feedback regarding the blog, or just wanting to get in touch.
+**Feel free to write me!**
+Whether it's questions or feedback regarding the blog, or just wanting to get in touch.
 
 *I usually respond within a couple of days.*
 
