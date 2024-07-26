@@ -159,3 +159,52 @@ and trigger a corresponding action, such as notifying the user
 or refusing to boot.
 As the BIOS is updated more rarely, managing the trusted
 state of the BIOS is less difficult then with the bootloader.
+
+### 4. BOOT SECURITY REQUIREMENTS
+
+Based upon the above common threats to boot-
+level security, the following requirements for a secure boot
+process can be formulated:
+
+#### A. Verifiable Initial State
+It is necessary that the user can verify, that the installed
+BIOS and bootloader are in a trusted initial state.
+This can be achieved for example by open source BIOS and bootloader
+code with reproducible builds.
+In this case, even when the BIOS arrives in an untrusted
+state, due to the possibility of a malware infection 'en passant',
+the user can compile the BIOS from source and flash it to
+the BIOS chip, either internally, or externally via an SPI
+programmer.
+
+#### B. Verifiable Trusted State
+It is necessary that the user can verify that the BIOS and the
+bootloader have not been altered unknowingly.
+
+This can be achieved for example by computing a checksum
+or signature of each BIOS component and the bootloader
+during each boot, and comparing those to saved, trusted values.
+The technical implementation could use a TPM and its PCRs
+to manage the trusted state. A security token or an open
+authentication app could add a second factor to establish trust
+in the TPMs measurements.
+
+#### C. Verifiable Updated State
+It is necessary that the user can update the BIOS and the
+bootloader and reestablish a trusted state in case of an infection
+or a new software release.
+In the case of a BIOS update, this can be achieved for ex-
+ample by manually recompiling and verifying the new release, internally or
+externally flashing it to the BIOS, recomputing the signatures
+and checksums of the BIOS components and sealing them to
+the TPM.
+In the case of a bootloader update, the same applies, except
+that the update may be done via the common release channel
+of the operating system and that no flashing is involved.
+
+{: .box-success}
+And this is it!
+In the next post, I will discuss whether UEFI Secure Boot holds up to those requirements 
+(some of you may already guess...).
+
+I am happy about feedback! You can find my contact details [here](/nimrodSec/contact).
