@@ -47,19 +47,19 @@ role is to *initialize and test hardware components* and *load
 the operating system*. In addition, modern BIOS loads and
 initializes important system management functions.
 
-{: .box-note}
 There are several different types of BIOS firmware on x86
 systems. Most newer systems use boot firmware based on
 the UEFI specifications [4]. 
 
 The BIOS has traditionally been considered the **root of trust**
-for the operating system. As it's the first code that runs on
-the CPU the BIOS can (maliciously) modify the OS image that
-it is supposed to load. 
-Due to the privileged access it has to
+for the operating system. 
+
+{: .box-error}
+As the BIOS is the the first code that runs on
+the CPU, the BIOS can (maliciously) modify the OS image that
+it is supposed to load. Due to the privileged access it has to
 all the hardware, it can (maliciously) reprogram all periphery
-devices. 
-Finally, it provides the code that executes in System
+devices.  Finally, it provides the code that executes in System
 Management Mode, thus being able to inject malicious SMM
 rootkits at runtime [5].
 
@@ -69,3 +69,20 @@ found on most modern computer systems. It is tasked with
 providing *basic security-related functions*, including securely
 storing and generating encryption keys and providing assur-
 ances about the state of a system [6]. 
+
+### 3. BOOT-LEVEL THREATS
+
+{: .box-note}
+The following sections attempt
+to establish an understanding and categorization of *some* possible
+threats to the security of the boot process, in order to formulate
+according security requirements. Examining all possible types of attacks, all the different
+methods of infection and all the various modes of persistence,
+not to mention their underlying technical details, is beyond
+the scope of this post. 
+
+#### A. Bootloader Attacks
+Before diving into the realm of BIOS attacks, it is
+important to mention that attacks on the bootloader also exist,
+which can sometimes even sabotage the underlying BIOS
+security measures [26]. The most notable example of this
