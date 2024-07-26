@@ -1,0 +1,161 @@
+---
+layout: post
+title: The Search For Boot Security Requirements
+subtitle: AKA Solving trust-issues with your computer 
+gh-repo: daattali/beautiful-jekyll
+gh-badge: [star, fork, follow]
+tags: [test]
+comments: false
+mathjax: true
+author: Nimrod Adam
+---
+
+{: .box-note}
+As this blog post is based on a university paper I wrote, it is written in a somewhat academic manner. I hope it is not to cumbersome to read. 
+The post is about understanding the underlying technologies and necessity of boot security. 
+And it is intended to be the first part of a mini-series! The next post will evaluate the most well-known boot security measure: UEFI Secure Boot.   
+
+# The Search For Boot Security Requirements 
+## AKA Solving trust-issues with your computer 
+
+### 1. Motivation
+In the last years, attacks against the boot process have
+become more and more sophisticated. 
+In comparison to malware targeting the operating system, boot-level malware is
+highly persistent, often sustaining both reboots and re-installs
+of a system [1]. 
+While advances have been made in improving platform
+firmware and bootloader security, most notably in the form
+of Secure Boot, ways of circumventing those protections have
+been found[2]. 
+
+{: .box-warning}
+It is crucial to find effective olutions for establishing a secure and verifiable boot process,
+as even security focused operating systems, such as Tails or QubesOS, can not protect
+from compromised boot firmware [3].
+
+### 2. Some Fundamentals
+
+#### A. BIOS and UEFI
+The system Basic Input Output System (**BIOS**) is the first
+piece of software executed on the CPU when a computer
+is powered on. 
+
+While historically its role was to provide
+operating systems access to hardware, its current primary
+role is to *initialize and test hardware components* and *load
+the operating system*. In addition, modern BIOS loads and
+initializes important system management functions.
+
+There are several different types of BIOS firmware on x86
+systems. Most newer systems use boot firmware based on
+the UEFI specifications [4]. 
+
+The BIOS has traditionally been considered the **root of trust**
+for the operating system. 
+
+{: .box-error}
+As the BIOS is the the first code that runs on
+the CPU, the BIOS can (maliciously) modify the OS image that
+it is supposed to load. Due to the privileged access it has to
+all the hardware, it can (maliciously) reprogram all periphery
+devices.  Finally, it provides the code that executes in System
+Management Mode, thus being able to inject malicious SMM
+rootkits at runtime [5].
+
+#### B. Trusted Platform Module
+The trusted platform module (**TPM**) is a discrete microchip
+found on most modern computer systems. It is tasked with
+providing *basic security-related functions*, including securely
+storing and generating encryption keys and providing assur-
+ances about the state of a system [6]. 
+
+### 3. BOOT-LEVEL THREATS
+
+{: .box-note}
+The following sections attempt
+to establish an understanding and categorization of *some* possible
+threats to the security of the boot process, in order to formulate
+according security requirements. Examining all possible types of attacks, all the different
+methods of infection and all the various modes of persistence,
+not to mention their underlying technical details, is beyond
+the scope of this post. 
+
+#### A. Bootloader Attacks
+
+Before diving into the realm of BIOS attacks, it is
+important to mention that attacks on the bootloader also exist,
+which can sometimes even sabotage the underlying BIOS
+security measures. 
+The most notable example of this
+kind of attacks is **BootHole**.
+BooHole effected the GRUB2 bootloader, which is utilized by most Linux systems. 
+It enabled attackers to gain arbitrary code execution during the
+boot process via a Buffer-Overflow vulnerability, even when
+Secure Boot was enabled. An exploit of the vulnerability
+would enable attackers to gain persistence thus giving them
+near-total control over the victim device [1].
+
+{: .box-warning}
+The implications for boot security requirements are that the BIOS must detect changes to the bootloader
+and trigger a corresponding action if a change is observed.
+The action can range from notifying the user, to refusing to
+boot if a modification is detected.
+
+Due to the fact that bootloaders such as GRUB are updated
+regularly, managing the trustworthiness of the bootloader is a
+serious challenge.
+
+
+#### B. BIOS Backdoor & Supply Chain Attacks
+While the common assumption is that the BIOS arrives to
+the user in a trusted state, there is no technical assurance that
+this is the case. One possible threat to boot security is the
+installation of a backdoor by the BIOS manufacturer (OEM).
+A backdoor, as defined by MITRE, is *an intentional malicious
+action taken to create and ultimately exploit a vulnerability
+in a technology at some point within the supply chain* [17].
+
+{: .box-success}
+While no known cases of a BIOS backdoor exist as of the
+writing of this paper, targeted backdooring of devices at the
+order of law enforcement agencies is technically and legally
+feasible, and may be part of the threat model of some users.
+
+Even when no intentional backdoor is installed, the BIOS is
+still susceptible to other types of supply chain attacks. 
+
+#### C. Bootkits
+
+Assuming that the system arrives with the manufacturers
+intended BIOS installed, and assuming that the manufacturers
+BIOS is not backdoored by the OEM, there are still threats to
+the integrity of the system BIOS during the systems lifetime,
+most notably in the form of bootkits.
+
+Bootkits work by abusing and subverting the operating system
+in the course of the initial boot process. 
+
+*A malicious modification of the BIOS code can happen in two main ways.*
+
+{: .box-error}
+1. If an attacker with physical access to the device
+connects an SPI programmer to the SPI chip, they can
+replace the benign firmware contents with a malicious one.
+2. An attacker with elevated local privileges can possibly reflash the BIOS, even remotley.
+
+Second way however, requires either a lack of proper reflashing protection implemented by
+the original BIOS, or an exploit of the original BIOS to get
+code execution rights, before the reflashing locks are applied
+or during an update [6].
+
+The implications of bootkits for boot security requirements are similar to those regarding bootloader
+attacks, but they apply for the BIOS.
+
+{: .box-warning}
+Malicious modifications, such as the injection of UEFI Mod-
+ules or the modification of the MBR or VBR, must be detected
+and trigger a corresponding action, such as notifying the user
+or refusing to boot.
+As the BIOS is updated more rarely, managing the trusted
+state of the BIOS is less difficult then with the bootloader.
