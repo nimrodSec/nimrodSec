@@ -2,7 +2,7 @@
 layout: post
 title: Boot Security Requirements
 subtitle: AKA formulating computer trust-issues 
-tags: [low-level security, BIOS, requirements engineering]
+tags: [low-level security]
 comments: false
 mathjax: true
 author: Nimrod Adam
