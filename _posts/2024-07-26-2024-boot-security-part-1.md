@@ -17,7 +17,7 @@ While advances have been made in improving platform
 firmware and bootloader security, most notably in the form
 of Secure Boot, ways of circumventing those protections have
 been found. 
-It is crucial to find effective olutions for establishing a secure and verifiable boot process,
+It is crucial to find effective solutions for establishing a secure and verifiable boot process,
 as even security focused operating systems, such as Tails or QubesOS, can not protect
 from compromised boot firmware!
 
@@ -42,7 +42,7 @@ the UEFI specifications.
 
 The BIOS has traditionally been considered the so called **root of trust**
 of the computer. This means that the entire code of the BIOS is assumed to be not malicious. 
-This makes sense, as an attcker infecting the BIOS can assert complete control over the computer.  
+ 
 {: .box-error}
 As the BIOS is the the first code that runs on
 the CPU, the BIOS can (maliciously) modify the OS image that
