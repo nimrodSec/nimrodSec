@@ -9,6 +9,7 @@ author: Nimrod Adam
 ---
 
 ### 1. Motivation
+
 In the last years, attacks against the boot process have
 become more and more sophisticated. 
 In comparison to malware targeting the operating system, boot-level malware is
@@ -25,9 +26,8 @@ from compromised boot firmware!
 {: .box-note}
 This blog post is based on a university paper I wrote and is thus written in a somewhat academic manner.  
 
-### 2. Some Fundamentals
+### 2. The BIOS and TPM
 
-#### A. BIOS and UEFI
 The system Basic Input Output System (**BIOS**) is the first
 piece of software executed on the CPU when a computer
 is powered on. 
@@ -56,7 +56,6 @@ However, *assuming* the BIOS is trustworthy is not enough.
 The *trusted computing base* (the code considered trustworthy) needs to be much smaller,
 and at best verifiable.   
 
-#### B. Trusted Platform Module
 The trusted platform module (**TPM**) aims to provide a trustworthy root of trust. 
 It is a discrete microchip found on most modern computer systems, tasked with
 providing basic security-related functions, including securely
@@ -98,6 +97,7 @@ regularly, managing the trustworthiness of the bootloader is not easy.
 
 
 #### B. BIOS Backdoor & Supply Chain Attacks
+
 {: .box-warning}
 While the common assumption is that the BIOS arrives to
 the user in a trusted state, there is no technical assurance that
@@ -154,6 +154,7 @@ level security, the following requirements for a secure boot
 process can be formulated:
 
 #### A. Verifiable Initial State
+
 {: .box-note}
 It is necessary that the user can verify that the installed
 BIOS and bootloader are in a trusted initial state.
@@ -167,6 +168,7 @@ the BIOS chip, either internally, or externally via an SPI
 programmer.
 
 #### B. Verifiable Trusted State
+
 {: .box-note}
 It is necessary that the user can verify that the BIOS and the
 bootloader have not been altered unknowingly.
@@ -180,6 +182,7 @@ authentication app could add a second factor to establish trust
 in the TPM's measurements.
 
 #### C. Verifiable Updated State
+
 {: .box-note}
 It is necessary that the user can update the BIOS and the
 bootloader and reestablish a trusted state in case of an infection
@@ -194,7 +197,7 @@ In the case of a bootloader update, the same applies, except
 that the update may be done via the common release channel
 of the operating system and that no flashing is involved.
 
-In the next post, I will discuss whether UEFI Secure Boot holds up to those requirements. 
+``In the next post, I will discuss whether UEFI Secure Boot holds up to those requirements.`` 
 
 {: .box-success}
 I am happy about feedback!
