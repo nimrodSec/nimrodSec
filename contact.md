@@ -13,8 +13,7 @@ To write an E2E encrypted mail, download my public PGP key [here](/nimrodSec/ass
 
 After importing the key, make sure the fingerprint matches the following:  
 
-{: .box-success}  
-PGP-Fingerprint: 8572 FE58 9565 8958 F048 8E76 D090 A119 39F7 9626
+``PGP-Fingerprint: 8572 FE58 9565 8958 F048 8E76 D090 A119 39F7 9626``
 
 This is a security measure to make sure the key really belongs to me.
 
