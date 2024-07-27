@@ -1,14 +1,12 @@
 ---
 layout: post
 title: Boot Security Requirements
-subtitle: Solving trust-issues with your computer 
+subtitle: AKA formulating computer trust-issues 
 tags: [low-level security, BIOS, requirements engineering]
 comments: false
 mathjax: true
 author: Nimrod Adam
 ---
-
-### 1. Motivation
 
 In the last years, attacks against the boot process have
 become more and more sophisticated. 
@@ -26,7 +24,7 @@ from compromised boot firmware!
 {: .box-note}
 This blog post is based on a university paper I wrote and is thus written in a somewhat academic manner.  
 
-### 2. The BIOS and TPM
+### The BIOS and TPM
 
 The system Basic Input Output System (**BIOS**) is the first
 piece of software executed on the CPU when a computer
@@ -62,7 +60,7 @@ providing basic security-related functions, including securely
 storing and generating encryption keys and providing assurances about the state of a system. 
 Many boot security features utilize the TPM for measuring 
 
-### 3. BOOT-LEVEL THREATS
+###  BOOT-LEVEL THREATS
 
 {: .box-note}
 The following sections attempt
@@ -147,7 +145,7 @@ and trigger a corresponding action.
 As the BIOS is updated more rarely, managing the trusted
 state of the BIOS is less difficult then with the bootloader.
 
-### 4. BOOT SECURITY REQUIREMENTS
+### BOOT SECURITY REQUIREMENTS
 
 Based upon the above threats to boot-
 level security, the following requirements for a secure boot
