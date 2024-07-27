@@ -1,36 +1,29 @@
 ---
 layout: post
-title: The Search For Boot Security Requirements
-subtitle: AKA Solving trust-issues with your computer 
-tags: [low-level security]
+title: Boot Security Requirements
+subtitle: - Solving trust-issues with your computer 
+tags: [low-level security, BIOS, requirements engineering]
 comments: false
 mathjax: true
 author: Nimrod Adam
 ---
-
-{: .box-note}
-As this blog post is based on a university paper I wrote, it is written in a somewhat academic manner. I hope it is not to cumbersome to read. 
-The post is about understanding the underlying technologies and necessity of boot security. 
-And it is intended to be the first part of a mini-series! The next post will evaluate the most well-known boot security measure: UEFI Secure Boot.   
-
-# The Search For Boot Security Requirements 
-## AKA Solving trust-issues with your computer 
 
 ### 1. Motivation
 In the last years, attacks against the boot process have
 become more and more sophisticated. 
 In comparison to malware targeting the operating system, boot-level malware is
 highly persistent, often sustaining both reboots and re-installs
-of a system [1]. 
+of a system. 
 While advances have been made in improving platform
 firmware and bootloader security, most notably in the form
 of Secure Boot, ways of circumventing those protections have
-been found[2]. 
-
-{: .box-warning}
+been found. 
 It is crucial to find effective olutions for establishing a secure and verifiable boot process,
 as even security focused operating systems, such as Tails or QubesOS, can not protect
-from compromised boot firmware [3].
+from compromised boot firmware!
+
+{: .box-note}
+This blog post is based on a university paper I wrote and is thus written in a somewhat academic manner.  
 
 ### 2. Some Fundamentals
 
