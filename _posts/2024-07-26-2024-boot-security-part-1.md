@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Boot Security Requirements
-subtitle: - Solving trust-issues with your computer 
+subtitle: Solving trust-issues with your computer 
 tags: [low-level security, BIOS, requirements engineering]
 comments: false
 mathjax: true
