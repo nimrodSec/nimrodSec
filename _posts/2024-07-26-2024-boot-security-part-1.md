@@ -66,7 +66,6 @@ Many boot security features utilize the TPM. The inner workings of it will be di
 
 ###  BOOT-LEVEL THREATS
 
-{: .box-note}
 The following sections attempt
 to establish an understanding and categorization of *some* possible
 threats to the security of the boot process, in order to formulate
@@ -201,8 +200,8 @@ In the case of a bootloader update, the same applies, except that the update may
 ``And this is it for the first post! In the next one, I will discuss whether UEFI Secure Boot holds up to those requirements. Some of you may already guess...`` 
 
 {: .box-success}
-I would be very happy about andy questions or feedback!
-You can find my contact details [here](/nimrodSec/contact).
+I would be very happy about any questions or feedback!
+ You can find my contact details [here](/nimrodSec/contact).
 
 ### Bibliography:
 
