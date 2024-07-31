@@ -13,7 +13,7 @@ My name is **Nimrod** (they/them), an IT-Security enthusiast mostly interested i
 
 
 {: .box-note}
-Next to experimenting with technology in my free time, I am also currently finishing a BA in Cyber Security
+Next to experimenting with technology in my free time, I am also currently finishing a BA in IT-Security.
 
 
 ---
