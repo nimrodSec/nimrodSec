@@ -2,7 +2,7 @@
 layout: post
 title: UEFI (In?)Secure Boot
 subtitle: Assesing proprietary BIOS security 
-tags: [low-level security]
+tags: [low-level security] [open-source]
 comments: false
 mathjax: true
 author: Nimrod Adam
