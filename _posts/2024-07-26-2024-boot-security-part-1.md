@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Boot Security Requirements
-subtitle: AKA formulating computer trust-issues 
+subtitle: Why you should not trust your BIOS 
 tags: [low-level security]
 comments: false
 mathjax: true
@@ -13,16 +13,21 @@ become more and more sophisticated.
 In comparison to malware targeting the operating system, boot-level malware is
 highly persistent, often sustaining both reboots and re-installs
 of a system. 
+Due to the elevated privileges of the BIOS and bootloader, a malicious boot component could
+result in a sabotage of the entire system’s security!
+
+In order to design a secure boot process, there is a need of clear
+requirements for boot-level security, as well as an analysis of current
+boot security measures.
 While advances have been made in improving platform
 firmware and bootloader security, most notably in the form
 of Secure Boot, ways of circumventing those protections have
-been found. 
+been found.
+
+{: .box-warning}
 It is crucial to find effective solutions for establishing a secure and verifiable boot process,
 as even security focused operating systems, such as Tails or QubesOS, can not protect
 from compromised boot firmware!
-
-{: .box-note}
-This blog post is based on a university paper I wrote and is thus written in a somewhat academic manner.  
 
 ### The BIOS and TPM
 
@@ -200,3 +205,4 @@ of the operating system and that no flashing is involved.
 {: .box-success}
 I am happy about feedback!
 You can find my contact details [here](/nimrodSec/contact).
+
