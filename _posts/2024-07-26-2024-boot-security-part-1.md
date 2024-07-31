@@ -206,3 +206,22 @@ of the operating system and that no flashing is involved.
 I am happy about feedback!
 You can find my contact details [here](/nimrodSec/contact).
 
+### Bibliography:
+
+X. Kovah and C. Kallenberg, “How many million BIOS
+would you like to infect”, 2015. 
+[Online] Available: https://archive.conference.hitb.org/hitbsecconf2015ams/wp-content/uploads/2015/02/WHITEPAPER-How-Many-Million-BIOSes-Would-You-Like-To-Infect.pdf 
+
+D. A. Cooper, W. T. Polk, A. R. Regenscheid, and
+M. P. Souppaya, “BIOS protection guidelines,” National
+Institute of Standards and Technology.
+[Online] Available: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-147.pdf  
+
+T. Hudson and L. Rudolph, “Thunderstrike: EFI
+firmware bootkits for apple MacBooks”. [Online]. Available: https://dl.acm.org/doi/pdf/10.1145/2757667.2757673 
+
+W. J. Heinbockel, E. R. Laderman, and G. J. Serrao, “Supply chain attacks and resiliency mitigations,” The MITRE Corporation, pp. 1–30, 2017.
+[Online] Available: https://www.nist.gov/system/files/documents/2018/12/06/supply_chain_attacks_and_resiliency_mitigations_-_mitre.pdf
+
+J. Rutkowska, “Intel x86 considered harmful,” the Invisible Things Lab, 2015. [Online]. Available:
+https://blog.invisiblethings.org/papers/2015/x86_harmful.pdf
